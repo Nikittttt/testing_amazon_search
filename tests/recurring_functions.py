@@ -2,10 +2,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 
-clearly_wait = 10
+clearly_wait = 30
 
 
 def open_departments_in_search(browser, departments):
+    WebDriverWait(browser, clearly_wait).until((
+        EC.presence_of_element_located((By.XPATH, '//div[@class="nav-search-facade"]//..')))
+    )
+
     open_select_departments = browser.find_element_by_xpath('//div[@class="nav-search-facade"]//..')
     open_select_departments.click()
     select_departments = Select(browser.find_element_by_xpath('//select[@id="searchDropdownBox"]'))
