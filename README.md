@@ -2,6 +2,7 @@
 ## Что это?
 Набор тестов для поиска в [Amazon](www.amazon.com) в соответствии с [тестовым планом](https://docs.google.com/document/d/18y8Y3ADwIQt-Hpm5Hypv1R0GF2pyu_Sx/edit?usp=sharing&ouid=104217170957615717630&rtpof=true&sd=true).
 ## Как запустить эти тесты?(версия для linux)
+### Вручную
 Для начала необходимо установить selenium для python:
 ```
 pip install selenium==3.14.0
@@ -25,6 +26,12 @@ chromedriver
 ```
 pytest -q /tests/ -v --tb=short
 ```
+### Через Docker
+Чтобы запустить тесты используя docker:
+```
+docker-compose up
+```
+
 ## Результат тестирования
 | Тип теста | Название функции | Проверка | Результат |
 | ------ | ------ | ------ | ------ |
